@@ -1,57 +1,57 @@
 import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Reviews = () => {
-    const {user} = useContext(AuthContext)
+    const {_id, price, name} = useLoaderData();
+    const {user} = useContext(AuthContext);
 
     const handleReview = event => {
         event.preventDefault()
         const form = event.target;
 
-        const name = form.fullName.value;
+        const fname = form.fullName.value;
         const photoURL = form.photoURL.value;
         const phone = form.phone.value;
         const email = user?.email || 'unregistered';
         const message = form.message.value;
 
         const review = {
-            // service: _id,
-            // serviceName: title,
-            // price,
-            customer: name,
+            service: _id,
+            serviceName: name,
+            price,
+            customer: fname,
             photoURL,
             email,
             phone,
             message
         }
 
-        console.log('md shamim hosssain')
 
-        // fetch('http://localhost:5000/orders', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json',
-        //         authorization: `Bearer ${localStorage.getItem('genius-token')}`
-        //     },
-        //     body: JSON.stringify(order)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data, 'md shamim hossain')
-        //         if(data.acknowledged === true){
-        //             alert('Your order placed successfully');
-        //             form.reset();
-        //         }
-        //     })
-        //     .catch(error => console.error(error))
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                // authorization: `Bearer ${localStorage.getItem('genius-token')}`
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged === true){
+                    alert('Your order placed successfully');
+                    form.reset();
+                }
+            })
+            .catch(error => console.error(error))
 
     }
 
     return (
         <div className='mt-20'>
             <form onSubmit={handleReview}>
-                <h1 className='text-3xl font-bold text-center mb-3'>Your are about to order: </h1>
-                <h1 className='text-2xl font-bold text-center mb-3'>Price: </h1>
+                <h1 className='text-3xl font-bold text-center mb-5'>Please Review: {name}</h1>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                     <input
                         name='fullName'

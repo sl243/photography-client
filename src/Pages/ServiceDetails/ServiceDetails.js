@@ -14,7 +14,7 @@ const ServiceDetails = () => {
                         <p className='text-xl font-semibold'>{details}</p>
                     </div>
                     <div className="card-actions justify-center">
-                    <Link to='/reviews'>
+                    <Link to={`/reviews/${_id}`}>
                         <button className="btn btn-primary mb-10">Add A Review</button>
                     </Link>
                 </div>
