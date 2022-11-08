@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import login from '../../images/login/login.jpg'
 
 const Signup = () => {
-    // const {createUser} = useContext(AuthContext)
+    const {userCreate} = useContext(AuthContext)
 
     const handleSignUp = event => {
         event.preventDefault()
@@ -11,16 +12,17 @@ const Signup = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        // createUser(email, password)
-        // .then(result => {
-        //     const user = result.user;
-        //     console.log(user)
-        //     form.reset()
-        // })
-        // .catch(error => {
-        //     console.log(error)
-        // })
+        userCreate(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user)
+            form.reset()
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
+
     return (
         <div className="hero my-20">
         <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
@@ -50,7 +52,7 @@ const Signup = () => {
                         
                     </div>
                     <div className="form-control mt-6">
-                        <input className="btn btn-primary" type='submit' value='Login'></input>
+                        <input className="btn btn-primary" type='submit' value='Sign Up'></input>
                 
                     </div>
                     <p>Already have an account? <Link className='text-orange-600 font-bold' to='/login'>Login</Link> </p>
