@@ -1,0 +1,50 @@
+[
+    {
+        "service_id": "01",
+        "name": "Wedding Photography",
+        "img": "https://i.ibb.co/JxQJsSy/Wedding-Photographer.jpg",
+        "price": "12000.00",
+        "details": "A good wedding photographer's job is to capture the sweet love story of a couple. What makes us stand out is our ability to capture the best moments, the tiniest of details, and the life of any wedding to make it a story worth telling. We have a team of highly enthusiastic and best wedding photographers who are versatile and capable of catering to different wedding photography styles.",
+        "rating": "5.00"
+    },
+    {
+        "service_id": "02",
+        "name": "Sports Photography",
+        "img": "https://i.ibb.co/kDGbz3z/sporsts-photography.jpg",
+        "price": "10500.00",
+        "details": "The industry of sports photography can be a highly appealing one – the ability to take in sporting events or the potential of being a part of professional sport is a dream to many, but the competitiveness of the industry and the challenge of shooting moving subjects can feel daunting. If you have an interest in doing a deeper dive into the world of sports photography and getting more involved in action photography, then look no further. We've compiled a guide to get started as a sports photographer – from breaking down the way to gain experience and break into the industry, to the technical aspects you’ll need, right up to the equipment.",
+        "rating": "4.9"
+    },
+    {
+        "service_id": "03",
+        "name": "Birthday Photography",
+        "img": "https://i.ibb.co/rHdcKW2/download-1-1.jpg",
+        "price": "9500.00",
+        "details": "irthday parties, especially those for children are so much fun to witness and experience. From the happiness in your child’s face as everyone sings happy birthday and she blows out the candles on a birthday cake, to the joy in her eyes as she opens her gifts to the fun of party games like pin the tail on the donkey or a pinata, there are many opportunities to make memorable photographs.",
+        "rating": "4.8"
+    },
+    {
+        "service_id": "04",
+        "name": "Natural Photography",
+        "img": "https://i.ibb.co/VD1LXms/natural.jpg",
+        "price": "11000.00",
+        "details": "Nature photography is a genre of photography that unlocks the beauty of natural elements in their natural habitat within a frame. It is an umbrella term that covers landscape photography, wildlife photography, and garden photography. The aspects of nature include a variety of subjects ranging from plants, animals, lush greenery in a personal backyard, to a hidden natural wonder that laughs with colors. Further, photographers can also capture the dynamics of seasons as they transition or highlight an environmental concern to call for immediate action, e.g., photographing melting ice caps, extinction of animals, etc.",
+        "rating": "4.5"
+    },
+    {
+        "service_id": "05",
+        "name": "Wild Photography",
+        "img": "https://i.ibb.co/sQsRwQP/p3742678897-3-1.jpg",
+        "price": "10500.00",
+        "details": "Wildlife photographers provide publications with images of animals, plants and environments from across the globe, although some self-publish as independent artists. In addition to understanding photographic techniques and methods, they must also comprehend the subjects of their images.",
+        "rating": "4.6"
+    },
+    {
+        "service_id": "06",
+        "name": "Home Decor Photography",
+        "img": "https://i.ibb.co/KzCG8qr/8888.jpg",
+        "price": "10000.00",
+        "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
+        "rating": "4.7"
+    }
+]

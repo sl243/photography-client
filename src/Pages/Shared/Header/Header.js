@@ -5,6 +5,7 @@ import logo from '../../../images/logo.svg'
 const Header = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
+        <li><Link to='/services'>Services</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
