@@ -4,7 +4,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import login from '../../images/login/login.jpg'
 
 const Login = () => {
-    const {LogIn} = useContext(AuthContext)
+    const { LogIn, GoogleSignIn } = useContext(AuthContext)
 
     const handleLogin = event => {
         event.preventDefault()
@@ -14,15 +14,25 @@ const Login = () => {
         // console.log(email, password)
 
         LogIn(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-            form.reset()
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                form.reset()
+            })
+            .catch(error => {
+                console.log(error)
+            })
 
+    }
+
+    // google sign in
+    const handleGoogleSignIn = () => {
+        GoogleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -50,11 +60,22 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type='submit' value='Login'></input>
-
+                            <input
+                                className="btn btn-primary"
+                                type='submit'
+                                value='Login'>
+                            </input>
                         </div>
-                        <p>Don't have an account? <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link> </p>
+                        <p className='mt-5'>Don't have an account? <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link> </p>
+
                     </form>
+                    <div className="form-control mt-6">
+                        <button
+                            onClick={handleGoogleSignIn}
+                            className="btn btn-outline btn-primary">
+                            Continue With Google
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

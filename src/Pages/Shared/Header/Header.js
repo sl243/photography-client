@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import logo from '../../../images/logo.svg'
 
 const Header = () => {
+    const { user, LogOut } = useContext(AuthContext)
+
+    // user Log out 
+    const handleSignOut = () => {
+        LogOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
+        <li><Link to='/blog'>Blog</Link></li>
         <li><Link to='/services'>Services</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        {
+            user?.uid ?
+                <>
+                    <li><Link to='/services'>My Reviews</Link></li>
+                    <li><Link to='/services'>Add Service</Link></li>
+                    <li><Link onClick={handleSignOut}>Logout</Link></li>
+                </>
+                :
+                <li><Link to='/login'>Login</Link></li>
+        }
     </>
     return (
         <div className="navbar bg-base-100">
@@ -39,11 +59,10 @@ const Header = () => {
                         <li>
                             <a className="justify-between">
                                 Profile
-                                <span className="badge">New</span>
                             </a>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        {/* <li><a>Settings</a></li> */}
+                        {/* <li><Link onClick={handleSignOut}>Logout</Link></li> */}
                     </ul>
                 </div>
             </div>
