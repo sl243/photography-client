@@ -27,12 +27,12 @@ const MyReview = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data, 'shamim')
-                    // if (data.deletedCount > 0) {
-                    //     alert('Your Order Deleted Successfully')
-                    //     const remaining = orders.filter(order => order._id !== id)
-                    //     setOrders(remaining)
-                    // }
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        alert('Your Order Deleted Successfully')
+                        const remaining = myreviews.filter(mrev => mrev._id !== id)
+                        setMyreviews(remaining)
+                    }
                 })
 
         }
