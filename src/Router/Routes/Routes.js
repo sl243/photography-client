@@ -9,6 +9,7 @@ import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services";
 import Signup from "../../Pages/Signup/Signup";
 import UpdateReview from "../../Pages/UpdateReview/UpdateReview";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -42,12 +43,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/reviews/:id',
-                element: <Reviews></Reviews>,
+                element: <PrivateRoute><Reviews></Reviews></PrivateRoute>,
                 loader: ({params}) => fetch(`https://shamim-photography-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myreview',
-                element: <MyReview></MyReview>
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
             },
             {
                 path: '/updatereview/:id',

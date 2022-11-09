@@ -43,8 +43,8 @@ const MyReview = () => {
             <h1 className='text-3xl text-center text-white mb-2'>You have {myreviews.length} Reviews</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
-                    <thead className='w-100'>
-                        <tr className='w-1/4'>
+                    <thead>
+                        <tr>
                             <th>
                             </th>
                             <th>Services</th>

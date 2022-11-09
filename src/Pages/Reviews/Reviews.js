@@ -40,7 +40,7 @@ const Reviews = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged === true){
-                    alert('Your order placed successfully');
+                    alert('Your review placed successfully');
                     form.reset();
                 }
             })
@@ -51,7 +51,7 @@ const Reviews = () => {
     return (
         <div className='mt-20'>
             <form onSubmit={handleReview}>
-                <h1 className='text-3xl font-bold text-center mb-5'>Please Review: {name}</h1>
+                <h1 className='text-3xl text-white font-bold text-center mb-5'>Please Review: {name}</h1>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                     <input
                         name='fullName'
