@@ -8,6 +8,7 @@ import Reviews from "../../Pages/Reviews/Reviews";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services";
 import Signup from "../../Pages/Signup/Signup";
+import UpdateReview from "../../Pages/UpdateReview/UpdateReview";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://shamim-photography-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',
@@ -42,11 +43,16 @@ const router = createBrowserRouter([
             {
                 path: '/reviews/:id',
                 element: <Reviews></Reviews>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://shamim-photography-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myreview',
                 element: <MyReview></MyReview>
+            },
+            {
+                path: '/updatereview/:id',
+                element: <UpdateReview></UpdateReview>,
+                loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
             }
         ]
     }

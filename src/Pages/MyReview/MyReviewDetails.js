@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyReviewDetails = ({ myreview, handleDelete }) => {
-    const { _id, serviceName, service, customer, phone, photoURL,message, price } = myreview;
+    const { _id, serviceName, service, customer, phone, photoURL,message } = myreview;
     const [reviewSevice, setReviewService] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://shamim-photography-server.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setReviewService(data))
     }, [service])
@@ -49,19 +50,18 @@ const MyReviewDetails = ({ myreview, handleDelete }) => {
                     </div>
                 </div>
             </td>
-            <td>price</td>
             <th >
                 <td>{message}</td>
             </th>
             <th>
-                {/* <td>
-                    <button
-                        onClick={() => handleStatusUpdate(_id)}
+                <td>
+                    <Link to={`/updatereview/${_id}`}> <button
+                        // onClick={() => handleStatusUpdate(_id)}
                         className="btn btn-ghost">
-                        {status ? status : 'Panding'}
-                    </button>
-                </td> */}
-                <td>{price}</td>
+                        {/* {status ? status : 'Panding'} */}
+                        Edit Review
+                    </button></Link>
+                </td>
             </th>
         </tr >
     );

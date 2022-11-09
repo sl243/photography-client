@@ -7,7 +7,7 @@ const MyReview = () => {
     const [myreviews, setMyreviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://shamim-photography-server.vercel.app/reviews?email=${user?.email}`)
         .then( res => res.json())
         .then( data => {
             setMyreviews(data)
@@ -18,7 +18,7 @@ const MyReview = () => {
     const handleDelete = id => {
         const procced = window.confirm('Are you sure, you want to cancle your order')
         if (procced) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://shamim-photography-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
                 // // jwt token verify
                 // headers: {
@@ -40,21 +40,20 @@ const MyReview = () => {
 
     return (
         <div className='mt-20'>
-            <h1 className='text-3xl text-center mb-2'>You have {myreviews.length} Reviews</h1>
-            <div className="overflow-x-auto">
-                <table className="table">
+            <h1 className='text-3xl text-center text-white mb-2'>You have {myreviews.length} Reviews</h1>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
                     <thead className='w-100'>
                         <tr className='w-1/4'>
                             <th>
                             </th>
                             <th>Services</th>
                             <th>User Info</th>
-                            <th>Price</th>
-                            <th className='w-1/4'>Message</th>
+                            <th>Review</th>
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody className='w-1/4 mx-auto'>
+                    <tbody>
 
                         {
                             myreviews.map(myreview => <MyReviewDetails
