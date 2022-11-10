@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main/Main";
+import AddService from "../../Pages/AddService/AddService";
 import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                 path: '/reviews/:id',
                 element: <PrivateRoute><Reviews></Reviews></PrivateRoute>,
                 loader: ({params}) => fetch(`https://shamim-photography-server.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/addservice',
+                element: <AddService></AddService>
             },
             {
                 path: '/myreview',

@@ -159,6 +159,15 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
+            <div className='mt-10'>
+                <h1 className='text-4xl text-center text-white font-semibold'>How does node js handle multiple requests at the same time?</h1>
+                <p className='text-xl mt-3'>
+                    NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them. EventLoop is the listener for the EventQueue.
+                </p>
+                <p className='text-xl mt-3'>
+                    If NodeJS can process the request without I/O blocking then the event loop would itself process the request and sends the response back to the client by itself. But, it is possible to process multiple requests parallelly using the NodeJS cluster module or worker_threads module.
+                </p>
+            </div>
         </div>
     );
 };
