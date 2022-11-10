@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
@@ -41,7 +42,7 @@ const Reviews = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged === true){
-                    alert('Your review placed successfully');
+                    toast.success('Your review placed successfully')
                     form.reset();
                     navigate('/myreview')
                 }

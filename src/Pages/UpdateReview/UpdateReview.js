@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
+
 const UpdateReview = () => {
     const { user } = useContext(AuthContext)
     const { _id, customer, photoURL, phone, message } = useLoaderData()
@@ -20,7 +21,7 @@ const UpdateReview = () => {
         }
 
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://shamim-photography-server.vercel.app/reviews/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -93,7 +94,6 @@ const UpdateReview = () => {
                         value="Update Review"
                         className="btn w-1/2 mx-auto mt-3 mb-5"
                     />
-
                 </form>
             </div>
         </div>

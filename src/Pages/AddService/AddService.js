@@ -23,7 +23,7 @@ const AddService = () => {
         }
 
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://shamim-photography-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
