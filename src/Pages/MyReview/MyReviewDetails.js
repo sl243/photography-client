@@ -56,9 +56,7 @@ const MyReviewDetails = ({ myreview, handleDelete }) => {
             <th>
                 <td>
                     <Link to={`/updatereview/${_id}`}> <button
-                        // onClick={() => handleStatusUpdate(_id)}
                         className="btn btn-ghost">
-                        {/* {status ? status : 'Panding'} */}
                         Edit Review
                     </button></Link>
                 </td>

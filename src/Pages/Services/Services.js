@@ -16,7 +16,7 @@ const Services = () => {
     return (
         <div>
             <div>
-                <h1>Services</h1>
+                <h1 className='text-4xl text-white text-center mt-5 mb-5'>Services</h1>
             </div>
             <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {

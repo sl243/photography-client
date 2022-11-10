@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const UpdateReview = () => {
-    const {user} = useContext(AuthContext)
-    const { _id, customer ,photoURL,phone } = useLoaderData()
-    const [review, setReview] = useState({})
+    const { user } = useContext(AuthContext)
+    const { _id, customer, photoURL, phone, message } = useLoaderData()
+    const navigate = useNavigate()
+
 
 
     const handleReviewChange = event => {
@@ -30,9 +31,10 @@ const UpdateReview = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.acknowledged === true){
+                if (data.acknowledged === true) {
                     alert('Your review updated successfully');
                     form.reset();
+                    navigate('/myreview')
                 }
             })
             .catch(error => console.error(error))
@@ -81,6 +83,7 @@ const UpdateReview = () => {
                     </div>
                     <textarea
                         name='message'
+                        defaultValue={message}
                         className="textarea textarea-bordered h-40 w-full mt-3"
                         placeholder="Update Your Review"
                         required
