@@ -97,6 +97,68 @@ const Blog = () => {
                     The signature ensures that the token hasn’t been altered. The party that creates the JWT signs the header and payload with a secret that is known to both the issuer and receiver, or with a private key known only to the sender. When the token is used, the receiving party verifies that the header and payload match the signature.
                 </p>
             </div>
+            <div>
+                <h2 className='text-4xl mt-10 text-center text-white font-semibold'>what is difference between javascript and node js</h2>
+                <div className='flex'>
+
+                    <div>
+                        <h1 className='text-2xl text-center text-white font-semibold mt-3'>javascript</h1>
+                        <p className='text-xl mt-3'>
+                            <strong>1-</strong> Javascript is a programming language that is used for writing scripts on the website.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>2-</strong> Javascript can only be run in the browsers.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>3-</strong> It is basically used on the client-side.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>4-</strong> Javascript is capable enough to add HTML and play with the DOM.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>5-</strong> Javascript can run in any browser engine as like JS core in safari and Spidermonkey in Firefox.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>6-</strong> Javascript is used in frontend development.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>7-</strong> Some of the javascript frameworks are RamdaJS, TypedJS, etc.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>8-</strong> 	It is the upgraded version of ECMA script that uses Chrome's V8 engine written in C++.
+                        </p>
+                    </div>
+                    <div>
+                        <h1 className='text-2xl text-center text-white font-semibold mt-3'>Node js</h1>
+                        <p className='text-xl mt-3'>
+                            <strong>1-</strong> NodeJS is a Javascript runtime environment.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>2-</strong> We can run Javascript outside the browser with the help of NodeJS.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>3-</strong> It is mostly used on the server-side.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>4-</strong> Nodejs does not have capability to add HTML tags.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>5-</strong> V8 is the Javascript engine inside of node.js that parses and runs Javascript.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>6-</strong> Nodejs is used in server-side development.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>7-</strong> Some of the Nodejs modules are Lodash, express etc. These modules are to be imported from npm.
+                        </p>
+                        <p className='text-xl mt-3'>
+                            <strong>8-</strong> Nodejs is written in C, C++ and Javascript.
+                        </p>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
