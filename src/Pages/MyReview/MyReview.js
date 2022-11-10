@@ -3,16 +3,21 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import MyReviewDetails from './MyReviewDetails';
 
 const MyReview = () => {
-    const { user } = useContext(AuthContext)
+    const { user, LogOut } = useContext(AuthContext)
     const [myreviews, setMyreviews] = useState([])
 
     useEffect(() => {
         fetch(`https://shamim-photography-server.vercel.app/reviews?email=${user?.email}`)
-            .then(res => res.json())
+            .then(res => {
+                if(res.status === 401 || res.status === 403) {
+                    LogOut()
+                }
+                return res.json()
+            })
             .then(data => {
                 setMyreviews(data)
             })
-    }, [user?.email])
+    }, [user?.email, LogOut])
 
     // delete
     const handleDelete = id => {
@@ -20,10 +25,10 @@ const MyReview = () => {
         if (procced) {
             fetch(`https://shamim-photography-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
-                // // jwt token verify
-                // headers: {
-                //     authorization: `Bearer ${localStorage.getItem('genius-token')}`
-                // }
+                // jwt token verify
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('photography-token')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {

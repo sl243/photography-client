@@ -27,7 +27,7 @@ const AddService = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                // authorization: `Bearer ${localStorage.getItem('genius-token')}`
+                authorization: `Bearer ${localStorage.getItem('photography-token')}`
             },
             body: JSON.stringify(services)
         })
